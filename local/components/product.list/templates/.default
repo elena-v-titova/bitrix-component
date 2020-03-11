@@ -1,0 +1,24 @@
+<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+
+<?if (!empty($arResult)):?>
+    <div>
+    <?foreach ($arResult['PRODUCT_LIST'] as $product):?>
+        <div>
+            <h1><?=$product['product']['NAME']?></h1>
+            <?=$product['product']['TIMESTAMP_X']?></br>
+            <?=$product['product']['DETAIL_TEXT']?>
+
+            <ul>
+            <?foreach ($product['reviews'] as $review):?>
+                <li>
+                    <?=$review['UF_TEXT']?></br>
+                    <small><?=$review['UF_NAME']?> <?=$review['UF_SURNAME']?></small>
+                </li>
+            <?endforeach?>
+            </ul>
+        </div>
+    <?endforeach?>
+    </div>
+<?endif?>
+
+
