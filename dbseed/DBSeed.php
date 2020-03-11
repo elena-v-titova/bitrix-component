@@ -44,6 +44,7 @@ class DBSeed
             $product_id = $ibel->Add($arFields);
             if (!$product_id) {
                 ShowError("Iblock not added");
+                exit;
             }
 
             return $product_id;
@@ -59,6 +60,7 @@ class DBSeed
 
         if (!$iblock) {
             ShowError("Iblock not found");
+            exit;
         }
 
         return $iblock["ID"];
@@ -83,6 +85,7 @@ class DBSeed
             $hlblockEl = $hlblockClass::add($arFields);
             if (!$hlblockEl->isSuccess()) {
                 ShowError("HLBlock not added");
+                exit;
             }
         }
     }
